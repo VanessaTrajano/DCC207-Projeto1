@@ -1,0 +1,9 @@
+.container{
+    border: 3px solid green;
+    height: 90vh;
+    width: 45vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}

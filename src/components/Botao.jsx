@@ -1,11 +1,11 @@
-import './botao.css'
+import './Botao.css'
 
 function Botao() {
    
     return (
-        <div className='body'>
+        <>
             <button className='reset'>Recomeçar Jogo</button>
-        </div>
+        </>
     )
 }
 

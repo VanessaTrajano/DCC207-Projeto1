@@ -1,7 +1,7 @@
 .container{
     border: 3px solid green;
     height: 90vh;
-    width: 50vw;
+    width: 45vw;
     display: flex;
     align-items: center;
     justify-content: center;

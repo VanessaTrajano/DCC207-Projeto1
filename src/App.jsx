@@ -1,10 +1,11 @@
 import './App.css'
+import Botao from '/.botao'
 
 function App() {
 
   return (
     <>
-      <h1>Funciona</h1>
+      <Botao/>
     </>
   )
 }

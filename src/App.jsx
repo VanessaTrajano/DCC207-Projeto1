@@ -1,5 +1,5 @@
 import './App.css'
-import Botao from '/.botao'
+import Botao from './botao'
 
 function App() {
 

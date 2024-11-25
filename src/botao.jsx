@@ -1,10 +1,12 @@
 import './botao.css'
 
-function restart() {
+function Botao() {
    
     return (
-        <div className='reset'>
-            <h1>Recomeçar Jogo</h1>
+        <div className='body'>
+            <button className='reset'>Recomeçar Jogo</button>
         </div>
     )
 }
+
+export default Botao

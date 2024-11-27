@@ -20,11 +20,12 @@ function Cards() {
     "🐮",
   ];
 
-  let cardsVirados = emojis; // por enquanto deixaremos assim para estilização
+  let cardsVirados = [];
+  let cardsEmbaralhados = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
 
   return (
     <div className="cards-container">
-      {cardsVirados.map((item) => {
+      {cardsEmbaralhados.map((item) => {
         return(
             <div className="card">
                 {item}

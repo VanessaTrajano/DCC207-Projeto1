@@ -33,36 +33,46 @@ function Cards() {
   );
 
   const [cardsVirados, setCardsVirados] = useState([]);
+  const [bloqueio, setBloqueio] = useState(false);
 
-  function checaIgualdade() {
-    const novosCards = [...cardsEmbaralhados];
-
-    if (novosCards[0].emoji === novosCards[1].emoji) {
-      novosCards[0].estaCerto = true;
-      novosCards[1].estaCerto = true;
-    } else {
-      novosCards[0].estaVirado = false;
-      novosCards[1].estaVirado = false;
+  const handleClick = (indice) => {
+    if (
+      bloqueio ||
+      cardsEmbaralhados[indice].estaVirado ||
+      cardsEmbaralhados[indice].estaCerto
+    ) {
+      return;
     }
 
+    const novosCards = cardsEmbaralhados.map((card, i) =>
+      i === indice ? { ...card, estaVirado: true } : card
+    );
+    setCardsEmbaralhados(novosCards);
+
+    const novosVirados = [...cardsVirados, indice];
+    setCardsVirados(novosVirados);
+  
+    if (novosVirados.length === 2) {
+      setBloqueio(true);
+      setTimeout(() => checaIgualdade(novosVirados), 1000);
+    }
+  };
+
+  const checaIgualdade = ([primeiroIndice, segundoIndice]) => {
+    const novosCards = [...cardsEmbaralhados];
+  
+    if (novosCards[primeiroIndice].emoji === novosCards[segundoIndice].emoji) {
+      novosCards[primeiroIndice].estaCerto = true;
+      novosCards[segundoIndice].estaCerto = true;
+    } else {
+      novosCards[primeiroIndice].estaVirado = false;
+      novosCards[segundoIndice].estaVirado = false;
+    }
+  
     setCardsEmbaralhados(novosCards);
     setCardsVirados([]);
-  }
-
-  function handleClick(indice) {
-    if (cardsVirados.length < 2 && !cardsEmbaralhados[indice].estaVirado) {
-      const novosCards = cardsEmbaralhados.map((card, i) =>
-        i === indice ? { ...card, estaVirado: true } : card
-      );
-
-      setCardsEmbaralhados(novosCards);
-      setCardsVirados([...cardsVirados, indice]);
-
-      if (cardsVirados.length === 1) {
-        setTimeout(checaIgualdade, 500);
-      }
-    }
-  }
+    setBloqueio(false);
+  };
 
   return (
     <div className="cards-container">

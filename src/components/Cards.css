@@ -25,8 +25,21 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #404040;
+  background-color: rgb(0, 0, 197);
   transition: 0.25;
   transform: rotateY(0deg);
   backface-visibility: hidden;
+}
+
+.card.card-virado {
+  transform: rotateY(0deg);
+}
+
+.card-virado::after,
+.acertou::after{
+  transform: rotateY(180deg);
+}
+
+.acertou{
+  pointer-events: none;
 }

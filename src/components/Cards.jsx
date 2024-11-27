@@ -1,4 +1,4 @@
-//import './Cards.css'
+import './Cards.css'
 
 function Cards() {
   const emojis = [ // usando emojis como exemplo para teste
@@ -23,10 +23,10 @@ function Cards() {
   let cardsVirados = emojis; // por enquanto deixaremos assim para estilização
 
   return (
-    <div>
+    <div className="cards-container">
       {cardsVirados.map((item) => {
         return(
-            <div>
+            <div className="card">
                 {item}
             </div>
         )

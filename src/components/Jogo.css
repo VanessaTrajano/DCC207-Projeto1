@@ -1,5 +1,6 @@
 .container{
-    border: 3px solid green;
+    border: 10px solid green;
+    background-color: gold;
     height: 90vh;
     width: 45vw;
     display: flex;

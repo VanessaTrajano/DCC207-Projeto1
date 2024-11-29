@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Cards.css";
 
 function Cards() {
-  const emojis = [
+  const linguagens = [
     "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
     "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
     "https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000",
@@ -22,11 +22,11 @@ function Cards() {
   ];
 
   const [cardsEmbaralhados, setCardsEmbaralhados] = useState(
-    emojis
+    linguagens
       .sort(() => Math.random() - 0.5)
-      .map((emoji, indice) => ({
+      .map((linguagem, indice) => ({
         id: indice,
-        emoji: emoji,
+        linguagem: linguagem,
         estaVirado: false,
         estaCerto: false,
       }))
@@ -61,7 +61,7 @@ function Cards() {
   const checaIgualdade = ([primeiroIndice, segundoIndice]) => {
     const novosCards = [...cardsEmbaralhados];
   
-    if (novosCards[primeiroIndice].emoji === novosCards[segundoIndice].emoji) {
+    if (novosCards[primeiroIndice].linguagem === novosCards[segundoIndice].linguagem) {
       novosCards[primeiroIndice].estaCerto = true;
       novosCards[segundoIndice].estaCerto = true;
     } else {
@@ -84,7 +84,7 @@ function Cards() {
           }`}
           onClick={() => handleClick(indice)}
         >
-          <img src={card.emoji}/>
+          <img src={card.linguagem}/>
         </div>
       ))}
     </div>

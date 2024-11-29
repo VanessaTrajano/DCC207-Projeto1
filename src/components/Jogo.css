@@ -1,3 +1,5 @@
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@300,400,500&display=swap');
+
 .container{
     background-color: green;
     color: gold;
@@ -7,7 +9,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Panchang', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .container h1 {

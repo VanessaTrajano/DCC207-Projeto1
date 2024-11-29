@@ -1,3 +1,5 @@
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@300,400,500&display=swap');
+
 .reset {
     /* max-width: 480px; */
     width: 81%;
@@ -8,6 +10,8 @@
     cursor: pointer;
     border-radius: 10px;
     font-size: 20px;
+    font-family: 'Panchang', sans-serif;
+    font-weight: 300;
 }
 
 .reset:hover {

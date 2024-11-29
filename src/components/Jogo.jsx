@@ -7,8 +7,10 @@ function Jogo() {
   return (
     <div className="container">
       <h1>Jogo da Memória</h1>
-      <Cards/>
-      <Botao/>
+      <div className='sub-container'>
+        <Cards/>
+        <Botao/>
+      </div>
     </div>
   )
 }

@@ -1,10 +1,14 @@
 import './Botao.css'
 
+function recarrega(){
+    window.location.reload()
+    }
+
 function Botao() {
    
     return (
         <>
-            <button className='reset'>Recomeçar Jogo</button>
+            <button className='reset' onClick={recarrega}>Recomeçar Jogo</button>
         </>
     )
 }

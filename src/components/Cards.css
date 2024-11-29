@@ -41,5 +41,5 @@
 }
 
 .acertou{
-  pointer-events: none;
+  transform: rotateY(0deg);
 }
